@@ -23,6 +23,6 @@ RUN chown -R tomcat8 /etc/tomcat8 \
 
 USER tomcat8
 
-EXPOSE 8080 8009
+EXPOSE 8080/tcp 8009/tcp
 
 CMD ["/usr/share/tomcat8/bin/catalina.sh", "run"]
