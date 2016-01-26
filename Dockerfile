@@ -14,7 +14,7 @@ ENV CATALINA_HOME /usr/share/tomcat8
 ENV CATALINA_BASE /var/lib/tomcat8
 ENV CATALINA_PID /var/run/tomcat8.pid
 #Specify JVM options
-#ENV JAVA_OPTS 
+ENV JAVA_OPTS "-Djava.security.egd=file:/dev/./urandom"
 
 #RUN rm -r /var/lib/tomcat8/webapps/ROOT
 #COPY webapp/component-registry-rest-2.0-beta4/war/compreg /var/lib/tomcat8/webapps/ROOT
