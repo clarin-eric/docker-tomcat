@@ -8,8 +8,9 @@ Volumes:
 
 Ports:
 
-* 8080: HTTP connector
 * 8009: AJP connector
+* 8080: HTTP connector
+* 8443: HTTPS connector
 
 # Build
 A make target is available to build this image:
