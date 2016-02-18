@@ -26,6 +26,8 @@ RUN chmod u+x /usr/bin/start_tomcat.sh
 
 WORKDIR /var/lib/tomcat8/webapps
 
+VOLUME ["/var/log/tomcat8"]
+
 EXPOSE 8080/tcp 8009/tcp 8443/tcp
 
 CMD ["/usr/bin/start_tomcat.sh"]
