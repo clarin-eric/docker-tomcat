@@ -21,7 +21,7 @@ COPY tomcat/catalina.properties /etc/tomcat8/catalina.properties
 RUN chown -R tomcat8:tomcat8 /etc/tomcat8 \
  && chown -R tomcat8:tomcat8 /var/lib/tomcat8/
 
-WORKDIR /var/lib/tomcat/webapps
+WORKDIR /var/lib/tomcat8/webapps
 
 #USER tomcat8
 
