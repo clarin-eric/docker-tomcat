@@ -7,8 +7,6 @@ Packages:
 
 Volumes:
 
-* /var/log/tomcat
-
 Ports:
 
 * 8080: HTTP connector
@@ -33,5 +31,5 @@ make push
 # Run
 
 ```
-docker run -ti --rm docker.clarin.eu/base:1.0.0
+docker run -ti --rm -p 8080 -p 8009 docker.clarin.eu/tomcat8:1.0.0
 ```
