@@ -18,10 +18,14 @@ ENV JAVA_OPTS "-Djava.security.egd=file:/dev/./urandom"
 
 COPY tomcat/logging.properties /etc/tomcat8/logging.properties
 COPY tomcat/catalina.properties /etc/tomcat8/catalina.properties
-RUN chown -R tomcat8 /etc/tomcat8 \
- && chown -R tomcat8 var/lib/tomcat8/webapps
+RUN chown -R tomcat8:tomcat8 /etc/tomcat8 \
+ && chown -R tomcat8:tomcat8 /var/lib/tomcat8/
 
-USER tomcat8
+WORKDIR /var/lib/tomcat/webapps
+
+#USER tomcat8
+
+#VOLUME /var/log/tomcat8
 
 EXPOSE 8080/tcp 8009/tcp
 
