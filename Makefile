@@ -1,4 +1,7 @@
 build:
-	docker build -t docker.clarin.eu/tomcat8:1.0.0 .
+	@docker build -t docker.clarin.eu/tomcat8:1.0.0 .
+
+push:
+	@docker push docker.clarin.eu/tomcat8:1.0.0
 
 all: build
