@@ -1,6 +1,6 @@
 FROM docker.clarin.eu/base:1.0.0
 
-#Install openjdk-jre-8
+#Install openjdk-jre-8 and tomcat8
 RUN echo "deb http://http.debian.net/debian jessie-backports main" >> /etc/apt/sources.list && \
     apt-get update -y && \
     apt-get install -y openjdk-8-jre-headless tomcat8
@@ -21,12 +21,11 @@ COPY tomcat/catalina.properties /etc/tomcat8/catalina.properties
 RUN chown -R tomcat8:tomcat8 /etc/tomcat8 \
  && chown -R tomcat8:tomcat8 /var/lib/tomcat8/
 
+ADD start_tomcat.sh /usr/bin/start_tomcat.sh
+RUN chmod u+x /usr/bin/start_tomcat.sh
+
 WORKDIR /var/lib/tomcat8/webapps
 
-#USER tomcat8
+EXPOSE 8080/tcp 8009/tcp 8443/tcp
 
-#VOLUME /var/log/tomcat8
-
-EXPOSE 8080/tcp 8009/tcp
-
-CMD ["/usr/share/tomcat8/bin/catalina.sh", "run"]
+CMD ["/usr/bin/start_tomcat.sh"]
