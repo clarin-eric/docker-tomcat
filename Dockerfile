@@ -26,6 +26,7 @@ RUN mkdir /var/lib/tomcat8/temp && \
     chown -R tomcat8 /usr/share/tomcat8 && \
     chown -R root:tomcat8 /var/log/tomcat8 && \
     chown tomcat8 /usr/bin/start_tomcat.sh && \
+    chmod u+x /usr/bin/start_tomcat.sh && \
     chmod g+w /var/log/tomcat8
 
 WORKDIR /var/lib/tomcat8/webapps
