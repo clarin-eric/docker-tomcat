@@ -1,4 +1,4 @@
-FROM docker.clarin.eu/base:1.0.0
+FROM docker.clarin.eu/base:1.0.1
 
 #Install openjdk-jre-8 and tomcat8
 RUN echo "deb http://http.debian.net/debian jessie-backports main" >> /etc/apt/sources.list && \
