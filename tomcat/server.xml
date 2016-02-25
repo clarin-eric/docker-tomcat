@@ -52,9 +52,10 @@
     <Engine name="Catalina" defaultHost="localhost">
 
       <Valve className="org.apache.catalina.valves.RemoteIpValve"
-           remoteIpHeader="x-forwarded-for"
-           proxiesHeader="x-forwarded-by"
-           protocolHeader="x-forwarded-proto" />
+          remoteIpHeader="x-forwarded-for"
+          internalProxies="149\.210\.236\.86|130\.183\.206\.198|130\.183\.206\.39|147\.251\.9\.199"
+          proxiesHeader="x-forwarded-by"
+          protocolHeader="x-forwarded-proto" />
 
       <Realm className="org.apache.catalina.realm.LockOutRealm">
         <Realm className="org.apache.catalina.realm.UserDatabaseRealm"
