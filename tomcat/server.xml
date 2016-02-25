@@ -65,7 +65,7 @@
 
 	 <Valve className="org.apache.catalina.valves.RemoteIpValve"
            remoteIpHeader="x-forwarded-for"
-           remoteIpProxiesHeader="x-forwarded-by"
+           proxiesHeader="x-forwarded-by"
            protocolHeader="x-forwarded-proto" />
 
       </Host>
