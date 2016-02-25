@@ -21,6 +21,9 @@ COPY tomcat/catalina.properties /etc/tomcat8/catalina.properties
 COPY start_tomcat.sh /usr/bin/start_tomcat.sh
 
 RUN mkdir /var/lib/tomcat8/temp && \
+    mkdir -p /usr/share/tomcat8/common/classes && \
+    mkdir -p /usr/share/tomcat8/server/classes && \
+    mkdir -p /usr/share/tomcat8/shared/classes && \
     chown -R tomcat8:tomcat8 /etc/tomcat8 && \
     chown -R tomcat8 /var/lib/tomcat8 && \
     chown -R tomcat8 /usr/share/tomcat8 && \
