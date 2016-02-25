@@ -51,6 +51,11 @@
 
     <Engine name="Catalina" defaultHost="localhost">
 
+      <Valve className="org.apache.catalina.valves.RemoteIpValve"
+           remoteIpHeader="x-forwarded-for"
+           proxiesHeader="x-forwarded-by"
+           protocolHeader="x-forwarded-proto" />
+
       <Realm className="org.apache.catalina.realm.LockOutRealm">
         <Realm className="org.apache.catalina.realm.UserDatabaseRealm"
                resourceName="UserDatabase"/>
@@ -61,12 +66,8 @@
 
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs"
                prefix="localhost_access_log" suffix=".txt"
-               pattern="%h %l %u %t &quot;%r&quot; %s %b" />
-
-	 <Valve className="org.apache.catalina.valves.RemoteIpValve"
-           remoteIpHeader="x-forwarded-for"
-           proxiesHeader="x-forwarded-by"
-           protocolHeader="x-forwarded-proto" />
+               pattern="%h %l %u %t &quot;%r&quot; %s %b"
+               requestAttributesEnabled="true" />
 
       </Host>
     </Engine>
