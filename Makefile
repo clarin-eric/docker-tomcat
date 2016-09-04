@@ -1,7 +1,12 @@
-build:
-	@docker build -t docker.clarin.eu/tomcat8:1.1.5 .
-
-push:
-	@docker push docker.clarin.eu/tomcat8:1.1.5
+REPOSITORY="docker.clarin.eu"
+NAME="tomcat8"
+VERSION="1.1.5"
+IMAGE = "${REPOSITORY}/${NAME}:${VERSION}"
 
 all: build
+
+build:
+	@docker build -t ${IMAGE} .
+
+push:
+	@docker push ${IMAGE}
